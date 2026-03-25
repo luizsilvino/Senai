@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Caça-Palavras Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU -->
+<div id="menu">
+  <h1>🎈 Caça-Palavras 🎈</h1>
+  <p>Escolha o nível:</p>
+
+  <button onclick="iniciarJogo(1)">🟢 Fácil</button>
+  <button onclick="iniciarJogo(2)">🟡 Médio</button>
+  <button onclick="iniciarJogo(3)">🔴 Difícil</button>
+</div>
+
+<!-- JOGO -->
+<div id="gameUI" style="display:none;">
+  <h2>
+    Pontos: <span id="pontos">0</span> | 
+    ❤️ Vidas: <span id="vidas">3</span> | 
+    Nível: <span id="nivel">1</span>
+  </h2>
+
+  <div id="jogo">
+    <div id="player"></div>
+  </div>
+</div>
+
+<!-- TELA FINAL -->
+<div id="telaFinal" style="display:none;">
+  <h1 id="mensagemFinal"></h1>
+  <button onclick="reiniciarJogo()">🔁 Jogar Novamente</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
