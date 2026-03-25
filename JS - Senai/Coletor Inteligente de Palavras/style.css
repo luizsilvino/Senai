@@ -4,7 +4,6 @@ body {
   background: linear-gradient(135deg, #ffecd2, #fcb69f);
 }
 
-/* MENU */
 #menu {
   margin-top: 100px;
 }
@@ -28,7 +27,6 @@ button:hover {
   background: #45a049;
 }
 
-/* JOGO */
 #jogo {
   width: 800px;
   height: 400px;
@@ -40,7 +38,6 @@ button:hover {
   border-radius: 15px;
 }
 
-/* PLAYER (MÃO) */
 #player {
   width: 70px;
   height: 70px;
@@ -53,7 +50,6 @@ button:hover {
   width: 100%;
 }
 
-/* PALAVRAS */
 .palavra {
   position: absolute;
   top: 0;
@@ -71,7 +67,6 @@ button:hover {
   margin: auto;
 }
 
-/* ANIMAÇÃO */
 @keyframes coletar {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.5); opacity: 0.7; }
@@ -82,7 +77,6 @@ button:hover {
   animation: coletar 0.3s forwards;
 }
 
-/* TELA FINAL */
 #telaFinal {
   position: fixed;
   top: 0;

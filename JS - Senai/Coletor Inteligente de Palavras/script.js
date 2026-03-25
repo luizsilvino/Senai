@@ -12,18 +12,14 @@ let jogoRodando = false;
 let velocidade = 5;
 let intervaloSpawn = 1500;
 
-// ✋ MÃO
 player.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">`;
 
-// 🎵 música
 const musica = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_115b9bce01.mp3");
 musica.loop = true;
 musica.volume = 0.3;
 
-// 🔊 som coleta
 const somColeta = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_44f1c3b1b3.mp3");
 
-// 🧠 base
 const base = [
   { nome: "gato", img: "https://cdn-icons-png.flaticon.com/512/616/616408.png" },
   { nome: "cachorro", img: "https://cdn-icons-png.flaticon.com/512/616/616430.png" },
@@ -37,7 +33,6 @@ const base = [
   { nome: "lapis", img: "https://cdn-icons-png.flaticon.com/512/2721/2721297.png" }
 ];
 
-// 🎮 iniciar
 function iniciarJogo(nivelEscolhido) {
   document.getElementById("menu").style.display = "none";
   document.getElementById("gameUI").style.display = "block";
@@ -61,7 +56,6 @@ function iniciarJogo(nivelEscolhido) {
   setInterval(criarPalavra, intervaloSpawn);
 }
 
-// 🎮 movimento
 document.addEventListener("keydown", (e) => {
   if (!jogoRodando) return;
 
@@ -71,7 +65,6 @@ document.addEventListener("keydown", (e) => {
   player.style.left = playerX + "px";
 });
 
-// 🧠 criar palavra
 function criarPalavra() {
   const palavra = document.createElement("div");
   palavra.classList.add("palavra");
@@ -149,7 +142,6 @@ function criarPalavra() {
   }, 50);
 }
 
-// 🏆 tela final
 function mostrarTelaFinal(texto) {
   jogoRodando = false;
   musica.pause();
@@ -160,7 +152,6 @@ function mostrarTelaFinal(texto) {
   document.getElementById("mensagemFinal").innerText = texto;
 }
 
-// 🔁 reiniciar
 function reiniciarJogo() {
   location.reload();
 }
