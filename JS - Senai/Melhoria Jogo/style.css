@@ -1,0 +1,172 @@
+/*
+Sem muitas dificuldades com CSS, ja sabia usar antes, apenas algumas partes nao ficavam do jeito certo
+Mudei as cores, o tamanho da area, o jogador, a moeda, os obstaculos e as caixas laterais
+Tambem organizei as mensagens da tela para o jogo ficar mais bonito
+*/
+
+body {
+  font-family: Arial;
+  text-align: center;
+  background-color: rgb(67, 63, 63);
+  color: white;
+}
+
+#areaJogo {
+  width: 600px;
+  height: 500px;
+  border: 3px solid black;
+  margin: auto;
+  position: relative;
+  background-color: rgb(48, 83, 95);
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+#mensagemCentral {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 25px 40px;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 4px solid white;
+  display: none;
+  z-index: 999;
+  text-align: center;
+  min-width: 250px;
+}
+
+#mensagemColisao {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  height: 25px;
+}
+
+#jogador {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  overflow: hidden;
+  border: 2px solid red;
+}
+
+#jogador img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.moeda {
+  width: 30px;
+  height: 30px;
+  background-color: gold;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgb(205, 152, 38);
+}
+
+.moeda img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.obstaculo {
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  border-radius: 25%;
+  position: absolute;
+  border: 3px solid black;
+  overflow: hidden;
+}
+
+.obstaculo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#painel {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+#painelVida {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+#painelTempo {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Caixas laterais */
+#caixaCronometro,
+#caixaPontos,
+#caixaVida {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 12px 10px;
+  gap: 10px;
+}
+
+#caixaCronometro {
+  left: 20px;
+  top: 180px;
+}
+
+#caixaPontos {
+  right: 20px;
+  top: 180px;
+}
+
+#caixaVida {
+  right: 20px;
+  top: 340px;
+  margin-top: 10px;
+}
+
+#imgCronometro,
+#imgPontos,
+#imgVida {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+}
+
+.infoBox {
+  width: 90px;
+  height: 50px;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
