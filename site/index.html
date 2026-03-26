@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbearia Style</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Barbearia Style</h1>
+    <p>Escolha seu barbeiro e agende seu corte</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Agendamento</h2>
+
+      <label for="cliente">Seu nome:</label>
+      <input type="text" id="cliente" placeholder="Digite seu nome" />
+
+      <label for="barbeiro">Escolha o barbeiro:</label>
+      <select id="barbeiro">
+        <option value="">Selecione um barbeiro</option>
+        <option value="Carlos">Carlos</option>
+        <option value="João">João</option>
+        <option value="Marcos">Marcos</option>
+      </select>
+
+      <label for="corte">Escolha o corte:</label>
+      <select id="corte">
+        <option value="">Selecione um corte</option>
+        <option value="Corte Social - R$ 25">Corte Social - R$ 25</option>
+        <option value="Degradê - R$ 30">Degradê - R$ 30</option>
+        <option value="Navalhado - R$ 35">Navalhado - R$ 35</option>
+        <option value="Corte + Barba - R$ 45">Corte + Barba - R$ 45</option>
+      </select>
+
+      <label for="data">Data do agendamento:</label>
+      <input type="date" id="data" />
+
+      <button id="agendarBtn">Agendar Corte</button>
+
+      <div id="mensagem"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
