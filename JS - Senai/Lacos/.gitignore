@@ -1,0 +1,62 @@
+  # =========================
+# Node.js
+# =========================
+node_modules/
+package-lock.json
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Arquivos temporários
+# =========================
+*.tmp
+*.temp
+*.swp
+
+# =========================
+# Build (se testar algo)
+# =========================
+dist/
+build/
+
+# =========================
+# Ignorar testes soltos
+# =========================
+rascunho/
+teste/
+anotacoes/
+
+# =========================
+# Ignorar arquivos dentro dos temas
+# =========================
+
+# Clean Code
+CleanCode/*.log
+CleanCode/*.tmp
+
+# Laços
+for/*.log
+while/*.log
+
+# Estruturas
+vetores/*.log
+matrizes/*.log
+
+# Outros exercícios
+exercicios-antigos/
