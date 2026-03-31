@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lógica de Programação</title>
+</head>
+<body>
+
+  <h1>Lógica de Programação</h1>
+
+  <p>Clique nos botões para executar os exercícios:</p>
+
+  <button onclick="exercicioFor()">1 - FOR (Contador)</button>
+  <button onclick="exercicioWhile()">2 - WHILE (Condicional)</button>
+  <button onclick="exercicioVetor()">3 - Vetores</button>
+  <button onclick="exercicioMatriz()">4 - Matrizes</button>
+
+  <div id="saida"></div>
+
+  <script>
+    function mostrar(texto) {
+      document.getElementById('saida').innerHTML += texto + "<br>";
+    }
+
+    function limpar() {
+      document.getElementById('saida').innerHTML = "";
+    }
+
+    // FOR
+    function exercicioFor() {
+      limpar();
+
+      let soma = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        soma += i;
+        mostrar("Número: " + i);
+      }
+
+      mostrar("Soma Total: " + soma);
+    }
+
+    // WHILE
+    function exercicioWhile() {
+      limpar();
+
+      let i = 0;
+
+      while (i <= 10) {
+        mostrar("Contador: " + i);
+        i++;
+      }
+    }
+
+    // VETOR
+    function exercicioVetor() {
+      limpar();
+
+      let notas = [7, 8, 6, 9];
+      let soma = 0;
+
+      for (let i = 0; i < notas.length; i++) {
+        soma += notas[i];
+        mostrar("Nota: " + notas[i]);
+      }
+
+      let media = soma / notas.length;
+
+      mostrar("Média: " + media);
+    }
+
+    // MATRIZ
+    function exercicioMatriz() {
+      limpar();
+
+      let alunos = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+      ];
+
+      for (let i = 0; i < alunos.length; i++) {
+        let soma = 0;
+
+        for (let j = 0; j < alunos[i].length; j++) {
+          soma += alunos[i][j];
+        }
+
+        let media = soma / alunos[i].length;
+
+        if (media >= 7) {
+          mostrar("Aluno " + (i + 1) + ": Média " + media + " - Aprovado");
+        } else {
+          mostrar("Aluno " + (i + 1) + ": Média " + media + " - Reprovado");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
