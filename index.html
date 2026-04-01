@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Boletim Escolar</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #2c2c3e;
+      padding: 30px;
+      border-radius: 10px;
+      width: 420px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #6c63ff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #574fd6;
+    }
+
+    #saida {
+      margin-top: 20px;
+    }
+
+    .aluno {
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      background: #3a3a52;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .excelente { color: #00e676; }
+    .bom { color: #40c4ff; }
+    .aprovado { color: #ffd740; }
+    .reprovado { color: #ff5252; }
+
+    .resumo {
+      margin-top: 15px;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Boletim Escolar</h1>
+
+    <button onclick="gerarBoletim()">Gerar Boletim</button>
+
+    <div id="saida"></div>
+  </div>
+
+  <script>
+    function gerarBoletim() {
+      const alunos = [
+        [8, 7, 6],
+        [5, 5, 5],
+        [10, 9, 8],
+        [6, 6, 6]
+      ];
+
+      const saida = document.getElementById("saida");
+      saida.innerHTML = "";
+
+      let maior = 0;
+      let menor = 10;
+      let aprovados = 0;
+
+      for (let i = 0; i < alunos.length; i++) {
+
+        let notas = alunos[i];
+        let soma = 0;
+        let j = 0;
+
+        while (j < notas.length) {
+          soma += notas[j];
+          j++;
+        }
+
+        let media = soma / notas.length;
+        let resultado = classificarAluno(media);
+
+        if (media >= 6) aprovados++;
+        if (media > maior) maior = media;
+        if (media < menor) menor = media;
+
+        mostrarAluno(i, media, resultado);
+      }
+
+      mostrarResumo(aprovados, maior, menor);
+    }
+
+    function classificarAluno(media) {
+      if (media >= 9) return "Excelente";
+      if (media >= 7) return "Bom";
+      if (media >= 6) return "Aprovado";
+      return "Reprovado";
+    }
+
+    function mostrarAluno(indice, media, resultado) {
+      const saida = document.getElementById("saida");
+
+      let classe = resultado.toLowerCase();
+
+      saida.innerHTML += `
+        <div class="aluno ${classe}">
+          <span>Aluno ${indice + 1}</span>
+          <span>${media.toFixed(1)} → ${resultado}</span>
+        </div>
+      `;
+    }
+
+    function mostrarResumo(aprovados, maior, menor) {
+      const saida = document.getElementById("saida");
+
+      saida.innerHTML += `
+        <div class="resumo">
+          <p>Aprovados: ${aprovados}</p>
+          <p>Maior média: ${maior.toFixed(1)}</p>
+          <p>Menor média: ${menor.toFixed(1)}</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
